@@ -89,12 +89,12 @@ export default function NewCampaign() {
         <link rel="icon" href="/logo.svg" />
       </Head>
       <main>
-        <Stack spacing={8} mx={"auto"} maxW={"2xl"} py={12} px={6}>
+        <Stack mx={"auto"} py={12} px={6} flexDirection={"row"} justifyContent="center">
           <Text fontSize={"lg"} color={"teal.400"}>
             <ArrowBackIcon mr={2} />
             <NextLink href="/"> Back to Home</NextLink>
           </Text>
-          <Stack>
+          <Stack flexDirection={"column"} justifyContent="center" alignItems={"flex-start"} margin="80px">
             <Heading fontSize={"4xl"}>Create a New Campaign 📢</Heading>
           </Stack>
           <Box
@@ -102,6 +102,7 @@ export default function NewCampaign() {
             bg={useColorModeValue("white", "gray.700")}
             boxShadow={"lg"}
             p={8}
+            ml={8}
           >
             <form onSubmit={handleSubmit(onSubmit)}>
               <Stack spacing={4}>
