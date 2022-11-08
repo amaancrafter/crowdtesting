@@ -1,3 +1,4 @@
+//set NODE_OPTIONS=--openssl-legacy-provider
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import NextLink from "next/link";

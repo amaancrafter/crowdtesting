@@ -19,9 +19,22 @@ import { useWallet } from "use-wallet";
 import NextLink from "next/link";
 import DarkModeSwitch from "./DarkModeSwitch";
 import { ChevronDownIcon } from "@chakra-ui/icons";
+import { useEffect } from "react";
 
 export default function NavBar() {
   const wallet = useWallet();
+
+  useEffect(() => {
+    wallet.account = '0x576A41c1b18afB51a387bfa4B4F5fd9EF3DE3b2d';
+    wallet.chainId = 5;
+    wallet.networkName = 'Goerli';
+    console.log('wallet.status', wallet.status);
+  }, [wallet]);
+
+  const connectWallet = async () => {
+    const res = await wallet.connect();
+    console.log('response', res, wallet);
+  }
 
   return (
     <Box>
@@ -125,7 +138,7 @@ export default function NavBar() {
                   _hover={{
                     bg: "teal.300",
                   }}
-                  onClick={() => wallet.connect()}
+                  onClick={connectWallet}
                 >
                   Connect Wallet{" "}
                 </Button>
