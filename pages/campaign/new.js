@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useAsync } from "react-use";
 import { useRouter } from "next/router";
 import { useWallet } from "use-wallet";
+import { Image } from '@chakra-ui/react'
 import { useForm } from "react-hook-form";
 import {
   Flex,
@@ -94,8 +95,8 @@ export default function NewCampaign() {
             <ArrowBackIcon mr={2} />
             <NextLink href="/"> Back to Home</NextLink>
           </Text>
-          <Stack flexDirection={"column"} justifyContent="center" alignItems={"flex-start"} margin="80px">
-            <Heading fontSize={"4xl"}>Create a New Campaign 📢</Heading>
+          <Stack bgImage="url('https://www.incimages.com/uploaded_files/image/1920x1080/getty_185462049_970646970450095_47050.jpg')" flexDirection={"column"} justifyContent="center" alignItems={"flex-start"} margin="80px">
+            <Heading px={12} fontSize={"4xl"}>Create a New Campaign 📢</Heading>
           </Stack>
           <Box
             rounded={"lg"}
@@ -104,9 +105,9 @@ export default function NewCampaign() {
             p={8}
             ml={8}
           >
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form  onSubmit={handleSubmit(onSubmit)}>
               <Stack spacing={4}>
-                <FormControl id="minimumContribution">
+                <FormControl flexShrink={0}  id="minimumContribution">
                   <FormLabel>Minimum Contribution Amount</FormLabel>
                   <InputGroup>
                     {" "}
