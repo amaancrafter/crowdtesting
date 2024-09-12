@@ -56,7 +56,7 @@ const Feature = ({ title, text, icon }) => {
         justify={"center"}
         color={"white"}
         rounded={"full"}
-        bg={useColorModeValue("gray.100", "gray.700")}
+        bg={useColorModeValue("white", "gray.700")}
         mb={1}
       >
         {icon}
